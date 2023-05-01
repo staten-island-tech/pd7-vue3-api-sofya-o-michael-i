@@ -3,7 +3,6 @@
 </template>
 
 <script setup>
-import { BarChart } from '../PieChart.vue'
 import { ref, onMounted } from 'vue'
 const fireDept = ref('')
 async function emsData() {
