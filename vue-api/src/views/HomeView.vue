@@ -3,7 +3,6 @@
 </template>
 
 <script setup>
-// https://data.cityofnewyork.us/resource/8m42-w767.json
 import { ref, onMounted } from 'vue'
 const fireDept = ref('')
 async function emsData() {
