@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <h1>Dispatched Time</h1>
+  <h1>Fire Incidents Per Borough</h1>
   <Bar id="BarChart" :options="chartOptions" :data="chartData" />
 </template>
 
