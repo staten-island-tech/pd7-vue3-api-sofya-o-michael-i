@@ -5,9 +5,7 @@
       <option value="All">All boroughs</option>
       <option value="Brooklyn">Brooklyn</option>
     </select>
-    <div>
-      <Bar v-if="loaded" :chartData="chartData" :chartOptions="chartOptions" />
-    </div>
+    <div></div>
   </div>
 </template>
 
