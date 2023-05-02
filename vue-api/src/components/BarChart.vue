@@ -1,15 +1,13 @@
-<template>
-  <Doughnut id="BarChart" :options="cOptions" :data="cData" />
-</template>
-
 <script>
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
-import { bar } from 'vue-chartjs'
-ChartJS.register(ArcElement, Tooltip, Legend)
+import { Bar } from 'vue-chartjs'
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Tooltip, Legend } from 'chart.js'
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend)
+
 export default {
   name: 'BarChart',
   components: {
-    bar
+    Bar
   },
   props: {
     chartOptions: {
@@ -26,4 +24,10 @@ export default {
   }
 }
 </script>
+
+<template>
+  <h1>Dispatched Time</h1>
+  <Bar id="BarChart" :options="chartOptions" :data="chartData" />
+</template>
+
 <style scoped></style>

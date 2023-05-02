@@ -1,6 +1,6 @@
 <template>
   <div class="BarChart">
-    <DoughnutChart v-if="loaded" :chartData="(c = Data)" :chartOptions="cOptions" />
+    <BarChart v-if="loaded" :chartData="chartData" :chartOptions="chartOptions" />
   </div>
 </template>
 
@@ -18,6 +18,15 @@ export default {
       },
       chartOptions: {
         responsive: true,
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ]
+        },
         backgroundColor: []
       }
     }
@@ -37,12 +46,22 @@ export default {
           labels: labels,
           datasets: [
             {
+              label: 'Borough Fire Incidents',
               data: boroughType,
               backgroundColor: backCol
             }
           ]
         }
         this.chartOptions = {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true
+                }
+              }
+            ]
+          },
           backgroundColor: backCol
         }
         this.loaded = true
@@ -58,24 +77,3 @@ export default {
 </script>
 
 <style scoped></style>
-<!-- <template>
-  <div class="content">
-    <h1>Select type of Emergencies</h1>
-    <select name="" id="">
-      <option value="Default">Default</option>
-      <option value="Medical">Medical</option>
-      <option value="Non-Medical">Non-Mecical</option>
-      <option value="Structural Fires">Structural Fires</option>
-    </select>
-    <div class="chart">
-      <DoughnutChart v-if="loaded" :data="chartData" :options="chartOptions" />
-      <BarChart v-if="loaded" :data="chartData" :options="chartOptions" />
-    </div>
-  </div>
-</template>
-
-<script>
-export default {}
-</script>
-
-<style lang="scss" scoped></style> -->
