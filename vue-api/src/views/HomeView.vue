@@ -1,5 +1,14 @@
 <template>
-  <div></div>
+  <div>
+    <select name="" id="">
+      <option value="All">All boroughs</option>
+      <option value="Brooklyn">Brooklyn</option>
+      <option value="Manhattan">Manhattan</option>
+      <option value="Queens">Queens</option>
+      <option value="Bronx">Bronx</option>
+      <option value="Staten Island">Staten Island</option>
+    </select>
+  </div>
 </template>
 
 <script setup>
