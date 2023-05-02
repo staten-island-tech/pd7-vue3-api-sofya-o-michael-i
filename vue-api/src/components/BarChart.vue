@@ -1,3 +1,10 @@
+<template>
+  <div>
+    <h1>Fire Incidents Per Borough</h1>
+    <Bar id="BarChart" :options="chartOptions" :data="chartData" />
+  </div>
+</template>
+
 <script>
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Tooltip, Legend } from 'chart.js'
@@ -24,10 +31,5 @@ export default {
   }
 }
 </script>
-
-<template>
-  <h1>Fire Incidents Per Borough</h1>
-  <Bar id="BarChart" :options="chartOptions" :data="chartData" />
-</template>
 
 <style scoped></style>
