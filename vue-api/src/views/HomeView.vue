@@ -9,6 +9,7 @@
     </select>
     <div class="chart">
       <DoughnutChart v-if="loaded" :data="chartData" :options="chartOptions" />
+      <BarChart v-if="loaded" :data="chartData" :options="chartOptions" />
     </div>
   </div>
 </template>
