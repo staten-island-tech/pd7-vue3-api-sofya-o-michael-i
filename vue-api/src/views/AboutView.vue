@@ -1,14 +1,14 @@
 <template>
-  <div class="BarChart">
-    <BarChart v-if="loaded" :chartData="chartData" :chartOptions="chartOptions" />
+  <div class="DoughnutChart">
+    <DoughnutChart v-if="loaded" :chartData="chartData" :chartOptions="chartOptions" />
   </div>
 </template>
 
 <script>
-import BarChart from '../components/BarChart.vue'
+import DoughnutChart from '../components/DoughnutChart.vue'
 export default {
-  name: 'BarView',
-  components: { BarChart },
+  name: 'DoughnutView',
+  components: { DoughnutChart },
   data() {
     return {
       loaded: false,
@@ -18,15 +18,6 @@ export default {
       },
       chartOptions: {
         responsive: true,
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true
-              }
-            }
-          ]
-        },
         backgroundColor: []
       }
     }
@@ -46,22 +37,12 @@ export default {
           labels: labels,
           datasets: [
             {
-              label: 'Borough Fire Incidents',
               data: boroughType,
               backgroundColor: backCol
             }
           ]
         }
         this.chartOptions = {
-          scales: {
-            yAxes: [
-              {
-                ticks: {
-                  beginAtZero: true
-                }
-              }
-            ]
-          },
           backgroundColor: backCol
         }
         this.loaded = true
