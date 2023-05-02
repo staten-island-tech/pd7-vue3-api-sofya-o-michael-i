@@ -4,7 +4,7 @@
 
 <script>
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
-import { bar } from 'vue-chartjs'
+import { Bar } from 'vue-chartjs'
 ChartJS.register(ArcElement, Tooltip, Legend)
 export default {
   name: 'BarChart',
