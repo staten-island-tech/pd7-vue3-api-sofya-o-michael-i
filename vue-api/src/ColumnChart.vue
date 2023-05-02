@@ -9,10 +9,6 @@
   </header>
 </template>
 
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <style scoped>
 header {
   line-height: 1.5;
