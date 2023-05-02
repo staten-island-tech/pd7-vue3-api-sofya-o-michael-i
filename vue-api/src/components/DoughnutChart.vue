@@ -1,13 +1,11 @@
 <template>
-  <Doughnut id="Doughnut" :options="chartOptions" :data="chartData" />
+  <Doughnut id="DoughnutChart" :options="chartOptions" :data="chartData" />
 </template>
 
 <script>
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Doughnut } from 'vue-chartjs'
-
 ChartJS.register(ArcElement, Tooltip, Legend)
-
 export default {
   name: 'DoughnutChart',
   components: {
@@ -28,9 +26,4 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.chart {
-  width: 40rem;
-}
-</style>
+<style scoped></style>
