@@ -1,38 +1,29 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <canvas id="myChart" width="400" height="400"></canvas>
-  </div>
+  <Doughnut id="BarChart" :options="cOptions" :data="cData" />
 </template>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+import { bar } from 'vue-chartjs'
+ChartJS.register(ArcElement, Tooltip, Legend)
 export default {
-  name:"BarChart",
-  props: {
-    msg:String
+  name: 'BarChart',
+  components: {
+    bar
   },
-}
-mounted() {
-    const ctx = document.getElementById("myChart"),
-}
-
-new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
+  props: {
+    chartOptions: {
+      type: Object,
+      required: true,
+      default: () => ({
+        responsive: true
+      })
     },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
+    chartData: {
+      type: Object,
+      required: true
     }
-  });
+  }
+}
 </script>
+<style scoped></style>
